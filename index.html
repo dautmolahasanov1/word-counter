@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Word counting</title>
+	<script type="text/javascript" src="main.js"></script>
+	<style type="text/css">
+		@media (max-width: 767px){
+			.container{
+				width: 90%;
+				margin: 0 5%;
+				background: #ccc;
+			}
+		}
+		@media (min-width: 768px){
+			.container{
+				width: 700px;
+				margin: auto;
+				background: #ccc;
+			}
+		}
+		#count {
+			width: 90%;
+			margin: 4%;
+			padding: 1%;
+			min-height: 400px;
+			resize: none;
+		}
+		.center {
+			text-align: center;
+		}
+		.button {
+			float: right;
+			margin: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" cols="40" rows="30">
+	<h1 class="center">Word counter</h1>
+		<textarea id="count" maxlength="10000"></textarea>
+		<button class="button" onclick="count()">Count</button>
+		<h3 id="number"></h3>
+	</div>
+				
+</body>
+</html>
