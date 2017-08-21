@@ -1,16 +1,26 @@
-function count(){
-	var str = document.getElementById('count').value;
-	var strLen = str.split(" ");
-	var nonUnq = 0;
-	for (var i = strLen.length - 1; i >= 0; i--) {
-		for (var j = strLen.length - 1; j >= 0; j--) {
-			if ((strLen[j] === strLen[i]) && (i>j)) {
-				nonUnq ++;
-				break;
-			}
+"use strict"
+function findDuplicate(arr) {
+	var i,
+		len=arr.length,
+		result = [],
+		obj = {};
+	for (i=0; i<len; i++) {
+		obj[arr[i]]=0;
+	}
+	for (i in obj) {
+		if (isNaN(i)) {
+			result.push(i);
 		}
 	}
-	var unq = strLen.length - nonUnq;
+	console.log(result)
+	return result.length;
+}
+
+function count(){
+	var str = document.getElementById('count').value;
+	var strLen = str.split(/\b\W+\b/);
+	var unq = findDuplicate(strLen);
+
 	document.getElementById('number').innerHTML = `
 	Your string consists of ` + strLen.length + ` words, but only `+ unq +` are unique`;
 }
